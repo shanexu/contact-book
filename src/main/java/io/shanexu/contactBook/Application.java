@@ -1,4 +1,4 @@
-package hello;
+package io.shanexu.contactBook;
 
 import java.util.Arrays;
 
