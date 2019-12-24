@@ -3,8 +3,13 @@ with import (fetchTarball https://github.com/NixOS/nixpkgs-channels/tarball/fb1b
 stdenv.mkDerivation {
   name = "contact-book-environment";
   buildInputs = [
+    pkgs.curl
+    pkgs.ps
     pkgs.adoptopenjdk-hotspot-bin-8
     pkgs.maven
     pkgs.elasticsearch-oss
   ];
+  shellHook = ''
+  export ES_HOME=$(pwd)/es
+  '';
 }

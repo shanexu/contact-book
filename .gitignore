@@ -71,3 +71,7 @@ Desktop.ini
 .*.sw[a-z]
 *.un~
 Session.vim
+/es/data
+/es/modules
+/es/logs
+/es/config/elasticsearch.keystore
