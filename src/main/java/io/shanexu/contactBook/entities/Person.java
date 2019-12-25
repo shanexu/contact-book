@@ -6,6 +6,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import javax.validation.constraints.NotBlank;
+
 @Document(indexName = "person")
 @Data
 public class Person {
@@ -14,9 +16,11 @@ public class Person {
     private String id;
 
     @Field(analyzer = "simple", type = FieldType.Text)
+    @NotBlank
     private String firstName;
 
     @Field(analyzer = "simple", type = FieldType.Text)
+    @NotBlank
     private String lastName;
 
     @Field(type = FieldType.Keyword)
