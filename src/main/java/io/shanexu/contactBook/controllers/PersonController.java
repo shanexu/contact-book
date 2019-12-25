@@ -24,7 +24,7 @@ public class PersonController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Page<Person> findAll(String firstName, String lastName, Pageable pageable) {
         log.debug("findAll firstName {} lastName {} pageable {}", firstName, lastName, pageable);
-        return personRepository.findByFirstNameOrLastName(firstName, lastName, pageable);
+        return personRepository.findByFirstNameOrLastNameAllIgnoreCase(firstName, lastName, pageable);
     }
 
     @GetMapping("/{id}")
